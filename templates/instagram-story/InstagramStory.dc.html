@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Historia de Instagram" description="Story vertical 1080×1920, guiada por la estrategia 50/50 informativa/comunidad" -->
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script></helmet>
+<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#1E1E1E;font-family:var(--font-sans);box-sizing:border-box;display:flex;flex-direction:column;padding:64px 64px 80px">
+<div style="position:absolute;top:-8%;right:-14%;opacity:.85"><x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.BurstShape" tone="lilac" size="420" rotation="10" hint-size="420,420"></x-import></div>
+<div style="position:absolute;bottom:120px;left:32px;width:70px;height:105px;opacity:0.1;color:#E098D8"><svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M 60 160 Q 55 140 60 120 Q 65 100 60 80 Q 55 60 60 40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="40" cy="100" rx="18" ry="28" fill="currentColor" opacity="0.8" transform="rotate(-35 40 100)"/><ellipse cx="80" cy="70" rx="18" ry="28" fill="currentColor" opacity="0.8" transform="rotate(35 80 70)"/><g transform="translate(60, 25)"><ellipse cx="0" cy="-12" rx="8" ry="14" fill="currentColor"/><ellipse cx="11" cy="-6" rx="8" ry="14" fill="currentColor" transform="rotate(72 0 0)"/><ellipse cx="7" cy="10" rx="8" ry="14" fill="currentColor" transform="rotate(144 0 0)"/><ellipse cx="-7" cy="10" rx="8" ry="14" fill="currentColor" transform="rotate(216 0 0)"/><ellipse cx="-11" cy="-6" rx="8" ry="14" fill="currentColor" transform="rotate(288 0 0)"/><circle cx="0" cy="0" r="5" fill="currentColor" opacity="0.6"/></g></svg></div>
+<div style="position:relative;display:flex;align-items:center;gap:16px">
+<sc-if value="{{ isInformativa }}" hint-placeholder-val="{{ true }}">
+<div style="background:#F8F058;color:#1E1E1E;font-size:26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px 24px;border-radius:999px">Informativa · vende</div>
+</sc-if>
+<sc-if value="{{ isComunidad }}" hint-placeholder-val="{{ false }}">
+<div style="background:#E098D8;color:#1E1E1E;font-size:26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px 24px;border-radius:999px">Comunidad · conecta</div>
+</sc-if>
+</div>
+<div style="position:relative;margin-top:20px;font-size:24px;color:#C9C4B9;letter-spacing:.04em">{{ category }}</div>
+<div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;margin-top:24px">
+<sc-if value="{{ usePhoto }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden">
+<image-slot id="story-photo" shape="rect" style="width:100%;height:100%" placeholder="Foto / clip de la historia"></image-slot>
+</div>
+</sc-if>
+<sc-if value="{{ hideDecoWhenPhoto }}" hint-placeholder-val="{{ true }}">
+<div style="width:96px"><x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.SparkleAccent" color="lemon" size="72" hint-size="72,72"></x-import></div>
+</sc-if>
+<div style="font-family:var(--font-display);font-weight:700;color:#FAF7F2;font-size:88px;line-height:1.05">Tip del día ✦</div>
+<div style="font-size:38px;color:#C9C4B9;line-height:1.5;max-width:92%">Escribe aquí el copy de esta historia — corto, directo, con la voz Stigma.</div>
+</div>
+<div style="position:relative">
+<sc-if value="{{ isInformativa }}" hint-placeholder-val="{{ true }}">
+<div style="background:#F8F058;border-radius:999px;padding:32px 44px;display:flex;align-items:center;justify-content:center;gap:16px">
+<div style="font-family:var(--font-display);font-weight:700;color:#1E1E1E;font-size:40px">{{ ctaLabel }}</div>
+<div style="color:#1E1E1E;font-size:40px">↗</div>
+</div>
+</sc-if>
+<sc-if value="{{ showPoll }}" hint-placeholder-val="{{ false }}">
+<div style="background:#FAF7F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:var(--font-display);font-weight:700;color:#1E1E1E;font-size:36px">¿Qué opinas?</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;background:#1E1E1E;color:#FAF7F2;text-align:center;font-size:32px;font-weight:600;padding:20px;border-radius:999px">Opción A</div>
+<div style="flex:1;background:#1E1E1E;color:#FAF7F2;text-align:center;font-size:32px;font-weight:600;padding:20px;border-radius:999px">Opción B</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ showQuestion }}" hint-placeholder-val="{{ false }}">
+<div style="background:#FAF7F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:var(--font-display);font-weight:700;color:#1E1E1E;font-size:36px">Pregúntanos lo que quieras</div>
+<div style="background:#EFEBE2;border-radius:999px;padding:22px 28px;color:#5B5750;font-size:30px">Escribe tu pregunta ✦</div>
+</div>
+</sc-if>
+<sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ false }}">
+<div style="background:#FAF7F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px">
+<div style="font-family:var(--font-display);font-weight:700;color:#1E1E1E;font-size:36px">Adivina ✦</div>
+<div style="display:flex;gap:14px">
+<div style="flex:1;background:#1E1E1E;color:#FAF7F2;text-align:center;font-size:28px;font-weight:600;padding:18px 8px;border-radius:999px">A</div>
+<div style="flex:1;background:#1E1E1E;color:#FAF7F2;text-align:center;font-size:28px;font-weight:600;padding:18px 8px;border-radius:999px">B</div>
+<div style="flex:1;background:#1E1E1E;color:#FAF7F2;text-align:center;font-size:28px;font-weight:600;padding:18px 8px;border-radius:999px">C</div>
+</div>
+</div>
+</sc-if>
+<div style="text-align:center;margin-top:28px;font-size:22px;letter-spacing:.14em;text-transform:uppercase;color:#5B5750">@stigmasaloon</div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:300,&quot;height&quot;:533},&quot;category&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Tip educativo (color, hidratación, uñas, pestañas)&quot;,&quot;options&quot;:[&quot;Bonos de regalo (gift cards)&quot;,&quot;Nuevos servicios y técnicas&quot;,&quot;Diagnóstico de color / cabello gratis&quot;,&quot;Conoce al equipo (una artista por día)&quot;,&quot;Encuestas: ¿qué servicio quieres probar?&quot;,&quot;Testimonios reales de clientes&quot;,&quot;Antes / después del día&quot;,&quot;Tip educativo (color, hidratación, uñas, pestañas)&quot;,&quot;Plan de referidos&quot;,&quot;Combo del mes / venta cruzada&quot;,&quot;Promoción o activación por fecha&quot;,&quot;Mitos y datos de belleza&quot;,&quot;Cupos de la semana (urgencia)&quot;,&quot;Glam Express para tu evento&quot;,&quot;Agenda tu cita (a WhatsApp)&quot;,&quot;Un día en Stigma&quot;,&quot;Stigma mood (la vibra del salón)&quot;,&quot;Feedback / resuelve dudas&quot;,&quot;Aquí sí te escuchan (frase de marca)&quot;,&quot;Ambiente día / noche&quot;,&quot;El servicio del día (rota servicios)&quot;,&quot;Playlist: ¿qué suena hoy en Stigma?&quot;,&quot;Etiqueta a quien merece consentirse&quot;,&quot;Detrás de cámara (las artistas)&quot;,&quot;Todxs caben (inclusión)&quot;,&quot;Clientas felices al espejo&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenido — elige la categoría de la parrilla&quot;},&quot;usePhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido — elige la categoría de la parrilla&quot;},&quot;stickerType&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;encuesta&quot;,&quot;options&quot;:[&quot;encuesta&quot;,&quot;pregunta&quot;,&quot;quiz&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Interacción (solo Comunidad)&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Escríbenos&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;CTA (solo Informativa, siempre a WhatsApp)&quot;}}">
+class Component extends DCLogic {
+  static informativas = ["Bonos de regalo (gift cards)","Nuevos servicios y técnicas","Diagnóstico de color / cabello gratis","Conoce al equipo (una artista por día)","Encuestas: ¿qué servicio quieres probar?","Testimonios reales de clientes","Antes / después del día","Tip educativo (color, hidratación, uñas, pestañas)","Plan de referidos","Combo del mes / venta cruzada","Promoción o activación por fecha","Mitos y datos de belleza","Cupos de la semana (urgencia)","Glam Express para tu evento"];
+  renderVals() {
+    const category = this.props.category ?? "Tip educativo (color, hidratación, uñas, pestañas)";
+    const isInformativa = Component.informativas.includes(category);
+    const isComunidad = !isInformativa;
+    const stickerType = this.props.stickerType ?? "encuesta";
+    const usePhoto = !!this.props.usePhoto;
+    return {
+      category,
+      isInformativa,
+      isComunidad,
+      usePhoto,
+      hideDecoWhenPhoto: !usePhoto,
+      ctaLabel: this.props.ctaLabel ?? "Escríbenos",
+      showPoll: isComunidad && stickerType === "encuesta",
+      showQuestion: isComunidad && stickerType === "pregunta",
+      showQuiz: isComunidad && stickerType === "quiz"
+    };
+  }
+}
+</script>
+</body>
+</html>

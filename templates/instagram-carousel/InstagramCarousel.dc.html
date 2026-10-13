@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Carrusel de Instagram" description="Carrusel de 6 slides (hook, tips, antes/después, CTA) con el sistema Stigma" -->
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script></helmet>
+<div style="display:flex;gap:24px;overflow-x:auto;padding:24px;background:#8a857c;font-family:var(--font-sans)">
+<div style="flex:0 0 380px;height:380px;background:#1E1E1E;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10%;box-sizing:border-box;border-radius:6px;overflow:hidden">
+<div style="position:absolute;top:-6%;left:-10%;opacity:.9"><x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.BurstShape" tone="lime" size="200" rotation="-8" hint-size="200,200"></x-import></div>
+<div style="position:absolute;bottom:-8%;right:-8%;opacity:.7"><x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.BurstShape" tone="lilac" size="150" rotation="12" hint-size="150,150"></x-import></div>
+<div style="position:absolute;top:20px;right:20px;width:60px;height:90px;opacity:0.12;color:#F8F058"><svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M 60 160 Q 55 140 60 120 Q 65 100 60 80 Q 55 60 60 40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="40" cy="100" rx="18" ry="28" fill="currentColor" opacity="0.8" transform="rotate(-35 40 100)"/><ellipse cx="80" cy="70" rx="18" ry="28" fill="currentColor" opacity="0.8" transform="rotate(35 80 70)"/><g transform="translate(60, 25)"><ellipse cx="0" cy="-12" rx="8" ry="14" fill="currentColor"/><ellipse cx="11" cy="-6" rx="8" ry="14" fill="currentColor" transform="rotate(72 0 0)"/><ellipse cx="7" cy="10" rx="8" ry="14" fill="currentColor" transform="rotate(144 0 0)"/><ellipse cx="-7" cy="10" rx="8" ry="14" fill="currentColor" transform="rotate(216 0 0)"/><ellipse cx="-11" cy="-6" rx="8" ry="14" fill="currentColor" transform="rotate(288 0 0)"/><circle cx="0" cy="0" r="5" fill="currentColor" opacity="0.6"/></g></svg></div>
+<div style="position:relative;width:120px;height:120px;margin-bottom:14px">
+<image-slot id="ig-hook-prop" shape="rect" style="width:100%;height:100%" placeholder="Prop recortado (sin fondo)"></image-slot>
+</div>
+<div style="position:relative;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#F8F058;margin-bottom:16px">Mitos del color</div>
+<div style="position:relative;font-family:var(--font-display);font-weight:700;color:#FAF7F2;font-size:34px;line-height:1.1">3 cosas que tu estilista no te dice</div>
+<div style="position:relative;margin-top:20px;font-size:13px;color:#C9C4B9">Desliza → ✦</div>
+</div>
+<div style="flex:0 0 380px;height:380px;background:#FAF7F2;display:flex;flex-direction:column;justify-content:center;padding:10%;box-sizing:border-box;border-radius:6px">
+<div style="font-family:var(--font-display);font-size:56px;color:#E868A0;line-height:1;margin-bottom:14px">01</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:24px;color:#1E1E1E;margin-bottom:14px;line-height:1.15">El tono depende de tu piel, no solo de la tendencia</div>
+<div style="font-size:14px;color:#5B5750;line-height:1.6">Un mismo rubio puede verse distinto según tu subtono. Por eso la asesoría va antes que el catálogo de Pinterest.</div>
+</div>
+<div style="flex:0 0 380px;height:380px;background:#FAF7F2;display:flex;flex-direction:column;justify-content:center;padding:10%;box-sizing:border-box;border-radius:6px">
+<div style="font-family:var(--font-display);font-size:56px;color:#E868A0;line-height:1;margin-bottom:14px">02</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:24px;color:#1E1E1E;margin-bottom:14px;line-height:1.15">Cuidar el color empieza en la ducha</div>
+<div style="font-size:14px;color:#5B5750;line-height:1.6">Agua tibia (no caliente) y shampoo sin sulfatos duplican la duración del tono.</div>
+</div>
+<div style="flex:0 0 380px;height:380px;background:#FAF7F2;display:flex;flex-direction:column;justify-content:center;padding:10%;box-sizing:border-box;border-radius:6px">
+<div style="font-family:var(--font-display);font-size:56px;color:#E868A0;line-height:1;margin-bottom:14px">03</div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:24px;color:#1E1E1E;margin-bottom:14px;line-height:1.15">Decir "no se puede en una sesión" es honestidad, no excusa</div>
+<div style="font-size:14px;color:#5B5750;line-height:1.6">Preferimos dos citas bien hechas que una que arriesgue tu cabello.</div>
+</div>
+<div style="flex:0 0 380px;height:380px;background:#1E1E1E;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:8%;box-sizing:border-box;border-radius:6px">
+<div style="font-family:var(--font-display);font-weight:700;font-size:20px;color:#FAF7F2;text-align:center">El antes que nadie ve</div>
+<div style="width:84%;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<image-slot id="ig-before" shape="rect" style="aspect-ratio:1;border-radius:4px" placeholder="Antes"></image-slot>
+<image-slot id="ig-after" shape="rect" style="aspect-ratio:1;border-radius:4px" placeholder="Después"></image-slot>
+</div>
+<div style="color:#C9C4B9;font-size:13px">Color por Valentina ✦</div>
+</div>
+<div style="flex:0 0 380px;height:380px;background:#F8F058;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10%;box-sizing:border-box;border-radius:6px">
+<x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.SparkleAccent" color="magenta" size="34" hint-size="34,34"></x-import>
+<div style="font-family:var(--font-display);font-weight:700;font-size:26px;color:#1E1E1E;margin:16px 0 12px;line-height:1.1">¿Lista/o para tu cambio?</div>
+<div style="font-size:14px;color:#1E1E1E;margin-bottom:20px">Reserva tu cita y ven a redefinir la belleza, junt@s.</div>
+<x-import component-from-global-scope="StigmaDesignSystem_ef6ffb.Button" variant="dark" size="md" hint-size="140,44">Reserva ↓</x-import>
+<div style="margin-top:20px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1E1E1E">@stigmasaloon</div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:420}}"></script>
+</body>
+</html>
